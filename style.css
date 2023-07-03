@@ -32,6 +32,7 @@ font-size: 1px;
 .libertadores{
     display: flex;
     justify-content: center;
+    
     align-items: center;
     width: 300px;
 }
