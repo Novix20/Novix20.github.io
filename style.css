@@ -1,65 +1,60 @@
 body {
     background-color: #0a4b75;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
 }
 
 * {
-  
     font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
     color: white;
-    padding: 2px;
-    border-radius: 20px ;
-    border: solid white;
-    background-color: rgb(33,55,83);
-text-align: center;
-
-
-}
-.b{
-    height: 200px;
-    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid white;
+    background-color: rgb(33, 55, 83);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-div {
-font-size: 1px;
-    justify-content: center;
-    gap: 1000px;
-    
-}
-
-.libertadores{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-}
-.foto {
-    transform: translate(1270px, -20px)
-}   
 article {
-
-    background-color: rgb(33,55,83);
+    background-color: rgb(33, 55, 83);
     background-image: url(Sanlorenoz.png);
     background-repeat: no-repeat;
-    background-position: 99%;
+    background-position: right;
     background-size: 130px;
     font-size: small;
     color: rgb(255, 255, 255);
-    border: solid 5px rgb(255, 255, 255);
+    border: 5px solid rgb(255, 255, 255);
     border-radius: 20px;
-    margin: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-#pipi {
-font-size: 10px;
+img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
 }
 
-.parrafo {
-    font-size: 20px;
+h1, h2, h3 {
+    text-align: center;
+    color: #fff;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 p {
     font-size: 15px;
+    text-align: justify;
 }
