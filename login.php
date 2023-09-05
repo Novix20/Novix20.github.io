@@ -3,12 +3,13 @@
     if(isset($_POST['username']) && isset($_POST['password'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-
+        $conexionDatos = new mysqli('localhost', 'phpmyadmin', 'RedesInformaticas', 'db_ibarra');
+        $resultadoUsuario = $conexionDatos->query("SELECT nombre, contrasena FROM usuarios where nombre=" . $username . " AND  contrasena=" . $password);
         // Aquí puedes realizar la validación de los datos ingresados por el usuario
         // Verificar si el nombre de usuario y la contraseña son correctos
 
         // Ejemplo de validación básica
-        if($username === 'admin' && $password === '12345') {
+        if($resultadoUsuario->num_rows == 1) {
             // Iniciar sesión
             session_start();
             $_SESSION['username'] = $username;
