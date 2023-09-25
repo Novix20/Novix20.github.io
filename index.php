@@ -1,3 +1,6 @@
+<?php
+session_start();
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -102,6 +105,45 @@
     <img src="https://cdn.conmebol.com/wp-content/uploads/2014/08/copa_1.jpg" 
         alt="San Lorenzo celebrando la obtención de su primera y única Copa CONMEBOL Libertadores en la edición 2014">
     <h2>San Lorenzo celebrando la obtención de su primera y única Copa CONMEBOL Libertadores en la edición 2014</h2>
+	
+    
+    <!-- Comentarios-->
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="formenvio">
+    Comentario: <textarea rows="2" cols="50" class="comentario" name="comentario" form="formenvio" placeholder="Por favor, ingrese un comentario..."></textarea>
+    <input type="submit">
+
+</form>
+
+<?php
+
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	  // Crear mensaje sobre el comentario
+	  $comentario = $_POST['comentario'];
+      //si no se ingresa el comentario
+	  if (empty($comentario)) {
+	    echo "<div class=\"info-msg-error\"><p><strong>Error!</strong>Por favor, ingrese un comentario válido";
+	  } else {
+        // si se ingresa
+	    echo "<div class=\"info-msg\"><p><strong>Exito!</strong>Gracias por dejar tu comentario!";
+	    $nuevocomentario = "INSERT INTO `Comentarios`(`mensaje`, 'usuario') VALUES ('$comentario', '$_SESSION["username"]');";
+	    $resultEnvio = mysqli_query($conexionDatos, $nuevocomentario);
+	  }
+	  echo "</p></div>";
+	}
+?>
+	<h3>Comentarios anteriores:</h3>
+	<?php
+		$queryComentarios = "SELECT * FROM Comentarios";
+		$resultDatos = mysqli_query($conexionDatos, $queryComentarios);
+		$numComentario = 0;
+
+		while($cmnt = mysqli_fetch_array($resultDatos)){
+			$numComentario = $numComentario + 1;
+			echo "<div class=\"txtComentario\"><p><strong>Comentario #$numComentario</strong></p><p>$cmnt[0]</p></div>";
+		}
+		mysqli_close($conexionDatos);
+	?>ysqli_close($conexionDatos);
+	
 </body>
 
 </html>

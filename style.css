@@ -87,3 +87,32 @@ align-items: center;
     color: #fff;
     margin: 0;
 }
+
+#formenvio {
+    margin: 20px;
+  }
+  
+
+form {
+    font-size: 20px;
+    color: white;
+}
+
+.comentario {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }   
+  
+  input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
