@@ -125,7 +125,7 @@ session_start();
 	  } else {
         // si se ingresa
 	    echo "<div class=\"info-msg\"><p><strong>Exito!</strong>Gracias por dejar tu comentario!";
-	    $nuevocomentario = "INSERT INTO `Comentarios`(`mensaje`, 'usuario') VALUES ('$comentario', '$_SESSION["username"]');";
+	    //$nuevocomentario = "INSERT INTO `Comentarios`(`mensaje`, 'usuario') VALUES ('$comentario', '$_SESSION["username"]');";
 	    $resultEnvio = mysqli_query($conexionDatos, $nuevocomentario);
 	  }
 	  echo "</p></div>";
